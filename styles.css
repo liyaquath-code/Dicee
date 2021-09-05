@@ -1,19 +1,24 @@
-.container {
+#instructions {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  display: none; 
+
+  height: 75%;
   width: 75%;
+  padding: 35px;
   margin: auto;
-  text-align: center;
+  box-sizing: border-box;
+  text-align: left;
+  
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
-.dice {
-  text-align: center;
-  display: inline-block;
-}
-
-.button {
-  width: 30%;
-  margin: 20px auto;
-  text-align: center;
-  padding: 10px;
+#player1, #player2 {
+  width: auto;
 }
 
 .btn {
@@ -27,12 +32,12 @@
   -moz-border-radius: 4;
   border-radius: 4px;
   font-family: Courier New;
-  color: #ffffff;
+  color: #EEEEEE;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  font-weight: bold;
 }
-
 .btn:hover {
   background: #2cb889;
   background-image: -webkit-linear-gradient(top, #2cb889, #16b57d);
@@ -44,6 +49,50 @@
   cursor: pointer;
 }
 
+.button {
+  width: 30%;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 30px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+}
+
 .image {
   -webkit-animation:spin .1s linear;
   -moz-animation:spin .1s linear;
@@ -53,19 +102,50 @@
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+.margin {
+  margin: 10px;
+}
+
+.playerName {
+  width: 50%;
+  margin: 11% auto;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 10px;
+}
+
+.score1, .score2 {
+  display: block;
+  color: #4ECCA3;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: cursive;
+  font-size: 1.1rem;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
-  background-color: #393E46;
+  /* background-color: #393E46; */
+  background-image: radial-gradient(circle, #454b54, #393e46, #2e3238);
+  box-sizing: border-box;
+  margin: 0;
 }
 
 h1 {
   margin: 20px;
-  font-family: 'Lobster', cursive;
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Chewy', cursive;
   text-shadow: 5px 0 #232931;
-  font-size: 6.5rem;
+  font-size: 6.0rem;
   color: #4ECCA3;
 }
 
-p {
+p, label {
   font-size: 2rem;
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
@@ -80,4 +160,48 @@ footer {
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
+}
+
+label {
+  display: inline-block;
+  margin: 1%;
+  padding: 10px 20px;
+}
+
+input[type=text], select {
+  width: 30%;
+  padding: 10px 20px;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 960px) {
+
+  #player1, #player2, #mode {
+    width: auto;
+    margin: 5px auto;
+  }
+
+  .btnPlayerName {
+    margin-top: 8px;
+  }
+
+  .playerName {
+    padding: 20px 10px;
+    width: 70%;
+  }
+
+  label {
+    padding: 6px;
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 4.0rem;
+  }
+
 }
