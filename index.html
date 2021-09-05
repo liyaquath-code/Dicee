@@ -4,35 +4,41 @@
     <meta charset="utf-8">
     <title>Dicee</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Indie+Flower&display=swap" rel="stylesheet">
   </head>
-  
+
   <body>
+      <div class="playerName">
+        <form>
+          <label for="player1">Player 1's name</label>
+          <input type="text"  id="player1" name="player1" value="Player 1"> <br>
+          <label for="player2">Player 2's name</label>
+          <input type="text"  id="player2" name="player2" value="Player 2"> <br>
+          <label for="mode">Game Mode</label>
+          <select id="mode" name="mode">
+            <option value="classic" selected>Classic</option>
+            <option value="fastest">Fastest</option>
+          </select>
+        </form>
+        <button type="button" class="btn btnPlayerName" onclick="showInstructions()">Instructions</button>
+        <button type="button" class="btn btnPlayerName" onclick="start()">Start</button>
+        
+          <div id="instructions">
+            <a href="#" class="close" id="close" title="Close"></a>
+            <h3> Classic Mode </h3>
+            <ol>
+              <li>This is one time dice roll</li>
+              <li>Player with highest number will win!</li>
+            </ol>
+            <h3> Fastest Mode </h3>
+            <ol>
+              <li>In this mode, player will have to roll the dice on their turn</li>
+              <li>Player to reach score: 20 first will win!</li>
+            </ol>
+          </div>
 
-    <div class="container">
-      <h1>Click on the roll button</h1>
-
-      <div class="dice">
-        <p>Player 1</p>
-        <img class="img1" src="images/dice6.png">
       </div>
-
-      <div class="dice">
-        <p>Player 2</p>
-        <img class="img2" src="images/dice6.png">
-      </div>
-    </div>
-
-    <div class="button">
-       <button class="btn" onclick="roll()">Roll</button>
-    </div>
-    
-    <script src="index.js"></script>
-
+      
+      <script src="name.js"></script>
   </body>
-
-  <footer>
-    www 🎲 App Brewery 🎲 com
-  </footer>
-
 </html>
